@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+			integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"></script>
+	</head>
+
+	<script>
+		$(() => {
+			$('.rent button').click(() => {
+				const $button = $('.modal button:contains("Забронировать")');
+				$button.click();
+
+				$('.modal').css({ display: 'block' });
+			});
+		});
+	</script>
+
+	<style>
+		body {
+			padding: 50px;
+			max-width: 900px;
+			margin: 0 auto;
+		}
+		.modal {
+			position: fixed;
+			inset: 0;
+			display: none;
+		}
+
+		.rc-form-inline.rc-search_form,
+		.rc-flat_list__wrapper {
+			display: none;
+		}
+
+		.rent {
+			display: flex;
+		}
+
+		.rent button {
+			max-width: 300px;
+		}
+	</style>
+	<body>
+		<div class="rent">
+			<img
+				src="https://img.realtycalendar.ru/uploads/photo/file/1458/1458171/large_KIR_1457.JPG"
+				alt=""
+				width="300px"
+				height="300px" />
+
+			<div class="wrapper">
+				<p>
+					Квартира с изолированной комнатой, кухней - гостиной
+					подойдет как для дружной компании так и для семьи с детьми.
+					В 2-х минутах от дома открытое море, с высокого берега
+					которого можно любоваться закатом, дельфинами и морской
+					гладью.
+				</p>
+				<button>Забронировать</button>
+			</div>
+		</div>
+
+		<div class="modal">
+			<script src="https://realtycalendar.ru/webpack/application.js?_t=761019e7b10d99c31f74"></script>
+			<div id="rc-bookings-widget-root"></div>
+			<script type="text/javascript">
+				RC_BOOKINGS_WIDGET.init('2824dbec414dd2ac935f7b382bc113eb', {
+					apartment_ids: [105466],
+				});
+			</script>
+		</div>
+	</body>
+</html>
